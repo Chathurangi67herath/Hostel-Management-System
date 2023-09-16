@@ -35,11 +35,14 @@
 
 <body>
     <nav>
-        <label class="logo"><a id="logo" href="{{ asset('/') }}">HGCK</a></label>
+        <label class="logo"><a id="logo" href="{{ asset('/') }}"><img src="{{ asset('img/logo.jpg') }}"
+                    alt=""
+                    style="border-radius:50px; width:50px; vertical-align: middle; margin-right:20px"></a></label>
         <ul>
-            <li><a href="{{ asset('/managedetails') }}">Manage Details</a></li>
-            <li><a href="{{ asset('/studentdetails') }}">Students' Details</a></li>
+            <li><a href="{{ asset('/managedetails') }}">Home</a></li>
+
             <li><a href="{{ asset('/dailyattendance') }}">Daily Attendance</a></li>
+
         </ul>
         <label id="icon">
             <i class="fas fa-bars"></i>
@@ -56,10 +59,10 @@
 
                 <div class="input-feild">
                     <label for="">Date</label>
-                    <input class="inpt" type="date" id="date" placeholder="" name="date" /><br />
+                    <input class="inpt" type="date" id="date" placeholder="" name="date" required /><br />
 
                     <label for="">Register Number</label>
-                    <input class="inpt" type="text" id="regno" placeholder="" name="registerno"
+                    <input class="inpt" type="text" id="regno" placeholder="" name="registerno" required
                         required /><br />
 
                     <label for="">Student Name</label>

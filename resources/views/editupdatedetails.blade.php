@@ -40,6 +40,7 @@
             <li><a href="{{ asset('/managedetails') }}">Manage Details</a></li>
             <li><a href="{{ asset('/studentdetails') }}">Students' Details</a></li>
             <li><a href="{{ asset('/dailyattendance') }}">Daily Attendance</a></li>
+            <li><a href="{{ asset('/logout') }}">Log Out</a></li>
         </ul>
         <label id="icon">
             <i class="fas fa-bars"></i>
@@ -72,31 +73,66 @@
 
 
                     <input class="inpt" type="file" id="stuphoto" placeholder="" name="studentphoto"
-                        value="{{ $newdata->Student_Photo }}" /><br />
+                        value="{{ $newdata->Student_Photo }}" />
+                    <span class="text-danger" style="color: red;">
+                        @error('studentphoto')
+                            {{ $message }}
+                        @enderror
+                    </span><br />
 
                     <label for="">Register Number</label>
                     <input class="inpt" type="text" id="regno" placeholder="" name="registerno"
-                        value="{{ $newdata->Register_Number }}" /><br />
+                        value="{{ $newdata->Register_Number }}" />
+                    <span class="text-danger" style="color: red;">
+                        @error('registerno')
+                            {{ $message }}
+                        @enderror
+                    </span><br />
 
                     <label for="">Student Name (with initials)</label>
                     <input class="inpt" type="text" id="stuname" placeholder="" name="studentname"
-                        value="{{ $newdata->Student_Name }}" required /><br />
+                        value="{{ $newdata->Student_Name }}" required />
+                    <span class="text-danger" style="color: red;">
+                        @error('studentname')
+                            {{ $message }}
+                        @enderror
+                    </span><br />
 
                     <label for="">Home Address</label>
                     <input class="inpt" type="text" id="addrs" placeholder="" name="address"
-                        value="{{ $newdata->Home_Address }}" required /><br />
+                        value="{{ $newdata->Home_Address }}" required />
+                    <span class="text-danger" style="color: red;">
+                        @error('address')
+                            {{ $message }}
+                        @enderror
+                    </span><br />
 
                     <label for="">Email Address</label>
                     <input class="inpt" type="email" id="EmlAddrs" placeholder="" name="email"
-                        value="{{ $newdata->Email_Address }}" required /><br />
+                        value="{{ $newdata->Email_Address }}" required />
+                    <span class="text-danger" style="color: red;">
+                        @error('email')
+                            {{ $message }}
+                        @enderror
+                    </span><br />
 
                     <label for="">Phone Number</label>
                     <input class="inpt" type="text" id="telno" placeholder="" name="phoneno"
-                        value="{{ $newdata->Phone_Number }}" required /><br />
+                        value="{{ $newdata->Phone_Number }}" required />
+                    <span class="text-danger" style="color: red;">
+                        @error('phoneno')
+                            {{ $message }}
+                        @enderror
+                    </span><br />
 
                     <label for="">NIC No</label>
                     <input class="inpt" type="text" id="nic" placeholder="" name="nic"
-                        value="{{ $newdata->NIC_No }}" required /><br />
+                        value="{{ $newdata->NIC_No }}" required />
+                    <span class="text-danger" style="color: red;">
+                        @error('nic')
+                            {{ $message }}
+                        @enderror
+                    </span><br />
 
                     <div class="button-sec" id="ab">
                         <input class="button" type="submit" id="sub_btn" value="Update Student Details" />

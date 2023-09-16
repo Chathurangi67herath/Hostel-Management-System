@@ -31,12 +31,17 @@
     <title>login page</title>
 </head>
 
-<body>
-    <nav>
-        <label class="logo"><a id="logo" href="{{ asset('/') }}">HGCK</a></label>
+<body class="signup-screen-body">
+    <nav class="signup-screen-nav">
+
+        <label class="logo"><a id="logo" href="{{ asset('/') }}"><img src="{{ asset('img/logo.jpg') }}"
+                    alt=""
+                    style="border-radius:50px; width:50px; vertical-align: middle; margin-right:20px">Hostel
+                Management System -
+                SUSL</a></label>
         <ul>
             <li><a href="" class="active">Login</a></li>
-            <li><a href="{{ asset('/signup') }}">SignUp</a></li>
+            <li><a href="{{ asset('/signup') }}">Sign Up</a></li>
         </ul>
         <label id="icon">
             <i class="fas fa-bars"></i>
@@ -48,12 +53,12 @@
             <form action="{{ route('checklogin') }}" method="post">
                 {{ csrf_field() }}
                 @if (Session::has('success'))
-                    <div class="alert alert-success">
+                    <div class="alert alert-success" style="color:green;">
                         <center>{{ Session::get('success') }}</center>
                     </div>
                 @endif
                 @if (Session::has('fail'))
-                    <div class="alert alert-danger ">
+                    <div class="alert alert-danger " style="color: red;">
                         <center>{{ Session::get('fail') }}</center>
                     </div>
                 @endif
@@ -62,9 +67,8 @@
                 </div>
 
                 <div class="input-feild">
-                    <label for="">User Name</label>
                     <input class="inpt" type="text" id="userInp" placeholder="Enter user name" name="userName"
-                        value="{{ old('userName') }}" /><br />
+                        value="{{ old('userName') }}" />
                     <span class="text-danger">
                         @error('userName')
                             {{ $message }}
@@ -72,9 +76,8 @@
                     </span>
                     <br>
 
-                    <label for="">Password</label>
                     <input class="inpt" type="password" id="passInp" placeholder="Enter password" name="password"
-                        value="{{ old('password') }}" /><br />
+                        value="{{ old('password') }}" />
                     <span class="text-danger">
                         @error('password')
                             {{ $message }}

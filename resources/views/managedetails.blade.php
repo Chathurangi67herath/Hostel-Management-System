@@ -35,9 +35,11 @@
 
 <body>
     <nav>
-        <label class="logo"><a id="logo" href="{{ asset('/') }}">HGCK</a></label>
+        <label class="logo"><a id="logo" href="{{ asset('/') }}"><img src="{{ asset('img/logo.jpg') }}"
+                    alt=""
+                    style="border-radius:50px; width:50px; vertical-align: middle; margin-right:20px"></a></label>
         <ul>
-            <li><a href="" class="active">Manage Details</a></li>
+            <li><a href="" class="active">Home</a></li>
             <li><a href="{{ asset('/studentdetails') }}">Students' Details</a></li>
             <li><a href="{{ asset('/dailyattendance') }}">Daily Attendance</a></li>
             <li><a href="{{ asset('/logout') }}">Log Out</a></li>
@@ -48,21 +50,12 @@
     </nav>
 
     <section class="web-content">
-        <div class="button-sec mgbtn">
-            <!-- <div class="button" id="dd">
-          <a href="add new student.html">Add New Student</a>
-        </div> -->
-            <a href="{{ asset('/addnewstudent') }}">
-                <div class="button" id="dd">Add New Student</div>
-            </a>
+        <div>
+            <h1 class="" style="text-align: center; color:white; font-size: 50px">Welcome to Hostel Management
+                System</h1>
+            <img src="{{ asset('img/cis.jpg') }}" alt="" style="display: block; margin: 0 auto; padding: 20px;">
 
-            <a href="{{ asset('/updatedetails') }}">
-                <div class="button" id="dd">Update Student Details</div>
-            </a>
 
-            <a href="{{ asset('/deletedetails') }}">
-                <div class="button" id="dd">Detele Details</div>
-            </a>
         </div>
     </section>
 </body>

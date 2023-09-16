@@ -61,11 +61,11 @@ class loginconnect extends Controller
                 return redirect('managedetails');
             }
             else{
-                return back()->with('fail','Password is not Matches');
+                return back()->with('fail','Password is not matched');
             }
         }
         else {
-            return back()->with('fail','This User Name is not Registered');
+            return back()->with('fail','This User Name Is Not Registered');
         }
     }
     public function logout(){

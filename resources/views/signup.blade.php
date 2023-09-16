@@ -31,9 +31,13 @@
     <title>login page</title>
 </head>
 
-<body>
-    <nav>
-        <label class="logo"><a id="logo" href="{{ asset('/') }}">HGCK</a></label>
+<body class="signup-screen-body">
+    <nav class="signup-screen-nav">
+        <label class="logo"><a id="logo" href="{{ asset('/') }}"><img src="{{ asset('img/logo.jpg') }}"
+                    alt=""
+                    style="border-radius:50px; width:50px; vertical-align: middle; margin-right:20px">Hostel
+                Management System -
+                SUSL</a></label>
         <ul>
             <li><a href="{{ asset('/login') }}">Login</a></li>
             <li><a class="active">Sign Up</a></li>
@@ -47,12 +51,12 @@
         <div class="form-area">
             <form action="{{ route('savelogin') }}" method="post">
                 @if (Session::has('success'))
-                    <div class="alert alert-success">
+                    <div class="alert alert-success" style="color:green;">
                         <center>{{ Session::get('success') }}</center>
                     </div>
                 @endif
                 @if (Session::has('fail'))
-                    <div class="alert alert-danger">
+                    <div class="alert alert-danger" style="color: red;">
                         <center>{{ Session::get('fail') }}</center>
                     </div>
                 @endif
@@ -62,55 +66,50 @@
                 </div>
 
                 <div class="input-feild">
-                    <label for="">Name</label>
+                    <!-- <label for="">Name</label> -->
                     <input class="inpt" type="text" id="name" placeholder="Enter your name" name="name"
-                        value="{{ old('name') }}" /><br />
-                    <span class="text-danger">
+                        value="{{ old('name') }}" />
+                    <span class="text-danger" style="color: red;">
                         @error('name')
                             {{ $message }}
                         @enderror
                     </span>
                     <br>
-                    <label for="">Email Address</label>
-                    <input class="inpt" type="text" id="email" placeholder="abcdefgh@gmail.com" name="email"
-                        value="{{ old('email') }}" /><br />
-                    <span class="text-danger">
+                    <input class="inpt" type="text" id="email" placeholder="Enter Your Email" name="email"
+                        value="{{ old('email') }}" />
+                    <span class="text-danger" style="color: red;">
                         @error('email')
                             {{ $message }}
                         @enderror
                     </span>
                     <br>
-                    <label for="">Phone Number</label>
-                    <input class="inpt" type="text" id="telNo" placeholder="07........" name="telNo"
-                        value="{{ old('telNo') }}" /><br />
-                    <span class="text-danger">
+                    <input class="inpt" type="text" id="telNo" placeholder="Enter Phone Number name"
+                        name="telNo" value="{{ old('telNo') }}" />
+                    <span class="text-danger" style="color: red;">
                         @error('telNo')
                             {{ $message }}
                         @enderror
                     </span>
                     <br>
-                    <label for="">UserName</label>
                     <input class="inpt" type="text" id="userName" placeholder="Enter user name" name="userName"
-                        value="{{ old('userName') }}" /><br />
-                    <span class="text-danger">
+                        value="{{ old('userName') }}" />
+                    <span class="text-danger" style="color: red;">
                         @error('userName')
                             {{ $message }}
                         @enderror
                     </span>
                     <br>
-                    <label for="">Password</label>
                     <input class="inpt" type="password" id="password" placeholder="Enter your password"
-                        name="password" value="{{ old('password') }}" /><br />
-                    <span class="text-danger">
+                        name="password" value="{{ old('password') }}" />
+                    <span class="text-danger" style="color: red;">
                         @error('password')
                             {{ $message }}
                         @enderror
                     </span>
                     <br>
-                    <label for="">Re-Enter Password</label>
                     <input class="inpt" type="password" id="password2" placeholder="Re-Enter your password"
-                        name="password2" value="{{ old('password2') }}" /><br />
-                    <span class="text-danger">
+                        name="password2" value="{{ old('password2') }}" />
+                    <span class="text-danger" style="color: red;">
                         @error('password2')
                             {{ $message }}
                         @enderror
@@ -120,7 +119,7 @@
                         <input class="button" type="submit" id="sub_btn" value="Sign Up" />
                     </div>
                     <div class="abc">
-                        <a href="{{ asset('/login') }}"> Already have an account</a>
+                        <a href="{{ asset('/login') }}"> Already have an account?</a>
                     </div>
                 </div>
             </form>

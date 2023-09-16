@@ -37,11 +37,14 @@
 
 <body>
     <nav>
-        <label class="logo"><a id="logo" href="{{ asset('/') }}">HGCK</a></label>
+        <label class="logo"><a id="logo" href="{{ asset('/') }}"><img src="{{ asset('img/logo.jpg') }}"
+                    alt=""
+                    style="border-radius:50px; width:50px; vertical-align: middle; margin-right:20px"></a></label>
         <ul>
-            <li><a href="{{ asset('/managedetails') }}">Manage Details</a></li>
+            <li><a href="{{ asset('/managedetails') }}">Home</a></li>
             <li><a href="{{ asset('/studentdetails') }}">Students' Details</a></li>
             <li><a href="{{ asset('/dailyattendance') }}">Daily Attendance</a></li>
+            <li><a href="{{ asset('/logout') }}">Log Out</a></li>
         </ul>
         <label id="icon">
             <i class="fas fa-bars"></i>
@@ -49,41 +52,78 @@
     </nav>
 
     <section class="web-content">
-        @foreach ($errors->all() as $error)
-            <div class="alert alert-danger" role='alert'> Error! <br> {{ $error }}</div>
-        @endforeach
+
         <div class="form-area">
-            <form action="/saveDetails" method="post" enctype="multipart/form-data">
+
+            <form action="{{ route('saveDetails') }}" method="post" enctype="multipart/form-data">
+
                 {{ csrf_field() }}
                 <div class="form-title">
                     <div>Add a New Student</div>
                 </div>
 
                 <div class="input-feild">
-                    <label for="">Student Photo</label>
-                    <input class="inpt" type="file" id="stuphoto" placeholder="" name="studentphoto"
-                        required /><br />
 
-                    <label for="">Register Number</label>
-                    <input class="inpt" type="text" id="regno" placeholder="" name="registerno"
-                        required /><br />
+                    <label class="inpt" style="cursor: pointer; ">
+                        <span>Choose Photo</span>
+                        <input class="" type="file" id="stuphoto" name="studentphoto"
+                            value="{{ old('studentphoto') }}" required />
+                    </label>
+                    <span class="text-danger" style="color: red;">
+                        @error('studentphoto')
+                            {{ $message }}
+                        @enderror
+                    </span>
 
-                    <label for="">Student Name (with initials)</label>
-                    <input class="inpt" type="text" id="stuname" placeholder="" name="studentname"
-                        required /><br />
-
-                    <label for="">Home Address</label>
-                    <input class="inpt" type="text" id="addrs" placeholder="" name="address" required /><br />
-
-                    <label for="">Email Address</label>
-                    <input class="inpt" type="email" id="EmlAddrs" placeholder="" name="email" required /><br />
-
-                    <label for="">Phone Number</label>
-                    <input class="inpt" type="text" id="telno" placeholder="" name="phoneno" maxlength="10"
-                        required /><br />
-
-                    <label for="">NIC No</label>
-                    <input class="inpt" type="text" id="nic" placeholder="" name="nic" required /><br />
+                    <br>
+                    <input class="inpt" type="text" id="regno" placeholder="Register Number" name="registerno"
+                        value="{{ old('registerno') }}" />
+                    <span class="text-danger" style="color: red;">
+                        @error('registerno')
+                            {{ $message }}
+                        @enderror
+                    </span>
+                    <br>
+                    <input class="inpt" type="text" id="stuname" placeholder="Student Name (with initials)"
+                        name="studentname" value="{{ old('studentname') }}" />
+                    <span class="text-danger" style="color: red;">
+                        @error('studentname')
+                            {{ $message }}
+                        @enderror
+                    </span>
+                    <br>
+                    <input class="inpt" type="text" id="addrs" placeholder="Home Address" name="address"
+                        value="{{ old('address') }}" />
+                    <span class="text-danger" style="color: red;">
+                        @error('address')
+                            {{ $message }}
+                        @enderror
+                    </span>
+                    <br>
+                    <input class="inpt" type="email" id="EmlAddrs" placeholder="Email Address" name="email"
+                        value="{{ old('email') }}" />
+                    <span class="text-danger" style="color: red;">
+                        @error('email')
+                            {{ $message }}
+                        @enderror
+                    </span>
+                    <br>
+                    <input class="inpt" type="text" id="telno" placeholder="Phone Number" name="phoneno"
+                        value="{{ old('phoneno') }}" />
+                    <span class="text-danger" style="color: red;">
+                        @error('phoneno')
+                            {{ $message }}
+                        @enderror
+                    </span>
+                    <br>
+                    <input class="inpt" type="text" id="nic" placeholder="NIC No" name="nic"
+                        value="{{ old('nic') }}" />
+                    <span class="text-danger" style="color: red;">
+                        @error('nic')
+                            {{ $message }}
+                        @enderror
+                    </span>
+                    <br>
 
                     <div class="button-sec" id="ab">
                         <input class="button" type="submit" id="sub_btn" value="Add Student" />
@@ -92,6 +132,7 @@
             </form>
         </div>
     </section>
+
 </body>
 
 </html>

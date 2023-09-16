@@ -35,11 +35,14 @@
 
 <body>
     <nav>
-        <label class="logo"><a id="logo" href="{{ asset('/') }}">HGCK</a></label>
+        <label class="logo"><a id="logo" href="{{ asset('/') }}"><img src="{{ asset('img/logo.jpg') }}"
+                    alt=""
+                    style="border-radius:50px; width:50px; vertical-align: middle; margin-right:20px"></a></label>
         <ul>
-            <li><a href="{{ asset('/managedetails') }}">Manage Details</a></li>
-            <li><a href="{{ asset('/studentdetails') }}">Students' Details</a></li>
+            <li><a href="{{ asset('/managedetails') }}">Home</a></li>
+
             <li><a href="{{ asset('/dailyattendance') }}">Daily Attendance</a></li>
+
         </ul>
         <label id="icon">
             <i class="fas fa-bars"></i>
@@ -59,7 +62,7 @@
                         value="{{ $dailyatt->id }}" /><br />
                     <label for="">Date</label>
                     <input class="inpt" type="date" id="date" placeholder="" name="date"
-                        value="{{ $dailyatt->Date }}" /><br />
+                        value="{{ $dailyatt->Date }}" required /><br />
 
                     <label for="">Register Number</label>
                     <input class="inpt" type="text" id="regno" placeholder="" name="registerno"
@@ -75,7 +78,7 @@
 
                     <label for="">Time Out</label>
                     <input class="inpt" type="time" id="Tout" placeholder=""
-                        name="Tout"value="{{ $dailyatt->Time_Out }}" required /><br />
+                        name="Tout"value="{{ $dailyatt->Time_Out }}" /><br />
 
                     <label for="">Time In</label>
                     <input class="inpt" type="time" id="Tin" placeholder="" name="Tin" required /><br />

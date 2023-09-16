@@ -28,24 +28,37 @@
             });
         });
     </script>
-    <title>Hemamali Girls' College, Kandy</title>
+    <title>Hostel Management System</title>
 </head>
 
 <body>
     <nav>
-        <label class="logo"><a id="logo" href="{{ asset('/welcome') }}">HGCK</a></label>
+        <label class="logo" ><a
+                id="logo" href="{{ asset('/welcome') }}" style="border-radius:50px; width:50px; vertical-align: middle; margin-right:20px">Sabaragamuwa University of Sri Lanka</a>
+        </label>
         <ul>
-            <li><a href="" class="active">Home</a></li>
+            {{-- <li><a href="" class="active">Home</a></li>
             <li><a href="">Administration</a></li>
             <li><a href="">About us</a></li>
             <li><a href="">Contact us</a></li>
-            <li><a href="">Gallery</a></li>
-            <li><a href="{{ asset('/login') }}">Attendance</a></li>
+            <li><a href="">Gallery</a></li> --}}
+            <li><a href="{{ asset('/login') }}" class="active">Visit</a></li>
         </ul>
         <label id="icon">
             <i class="fas fa-bars"></i>
         </label>
     </nav>
+    <div class="web-content">
+        <div>
+            <h1 class="" style="text-align: center; color:white; font-size: 50px">Welcome to Sabaragamuwa
+                University of Sri Lanka</h1>
+            <img src="{{ asset('img/uni.jpg') }}" alt="" style="display: block; margin: 0 auto; padding: 20px;">
+
+
+        </div>
+
+
+    </div>
 </body>
 
 </html>

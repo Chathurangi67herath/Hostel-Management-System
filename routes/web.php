@@ -55,7 +55,7 @@ Route::get('/editdailyattendance',[connectController::class,'veiweditdailyattend
 //             Data Sending database
 //==========================================================
 
-Route::post('/saveDetails',[addnewController::class,'storedata']);
+Route::post('/saveDetails',[addnewController::class,'storedata'])->name('saveDetails');
 
 //==========================================================
 //             Data Sending to web
